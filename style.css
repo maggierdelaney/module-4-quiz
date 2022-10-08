@@ -1,0 +1,16 @@
+header {
+    text-align: center;
+}
+
+.timer {
+    text-align: right;
+}
+
+.view-highscores {
+    text-align: right;
+}
+
+/*will want a view high scores link in the top left corner
+will want questions centered
+will want question paragraph, buttons, and feedback in a column on top of each otehr
+will want end page to be All Done! Your high score = underneath, then a box to enter initials with submit, then two buttons underneath for "go back" or "clear high scores"
