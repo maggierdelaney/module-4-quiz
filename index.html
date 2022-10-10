@@ -22,38 +22,27 @@
   <!-- Wrapper div to hold the rest of the content on our screen -->  
   <main class="quiz">
       <!-- Div for the questions, hide class -->
-    <div class="hide">
-      <h2>What was the name of Beyonce's first solo album?</h2>
+    <div id="question-container">
+      <h2 id="question-title"></h2>
       <ol>
-        <button class="wrong">"B'Day"</button>
-        <button class="wrong">"I Am...Sasha Fierce"</button>
-        <button class="wrong">"Beyonce"</button>
-        <button class="correct">"Dangerously in Love"</button>
+        <button id="q1"></button>
+        <button id="q2"></button>
+        <button id="q3"></button>
+        <button id="q4"></button>
       </ol>
     </div>
-    <div class="hide">
-      <h2>What is Beyonce's favorite number?</h2>
-        <ol>
-          <button class="wrong">"22"</button>
-          <button class="correct">"4"</button>
-          <button class="wrong">"7"</button>
-          <button class="wrong">"13"</button>
-        </ol>
-    </div>
       <!-- Div for the end screen -->
-    <div class="hide">
+    <div id="results">
       <h2>All done!</h2>
       <p>Your high score </p>
       <form>Enter initials</form>
       <form class="form">initials</form>
       <!--will need the empty text box-->
       <button class="submit-initials">Submit</button>
-    </div>-->
-  
+    </div>
       <!-- Div to dynamically display feedback to the user
       and display a "correct" or "incorrect" statement -->
-      <div class="correct-feedback">Correct!</div>
-      <div class="wrong-feedback">Wrong!</div>
+      <div id="feedback"></div>
 
 
   </main>

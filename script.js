@@ -3,25 +3,55 @@ var timer = document.querySelector(".timer");
 var startQuiz = document.querySelector(".quiz");
 var secondsLeft = 75;
 var highScores = document.querySelector(".view-highscores");
-var divTags = document.querySelectorAll(".hide");
+var questionContainer = document.querySelector("#question-container");
+var questionTitle = document.querySelector("#question-title");
+var feedback = document.querySelector("#feedback");
 
+var results = document.querySelector("#results");
+var answer = document.getElementById("correct");
 
-//add high scores elements........."go back" and "clear high scores"
-
+//putting questions in an array
+//consdier making just one question container, then using textContent to change the questions to the second one, the h2 and buttons need separate ids
 //starts after the start quiz button is clicked
-hideQuestions() {
-    var divTags = document.getElementByClassName("hide");
-    for (var i = o; i < divTags.length; i++) {
-        divTags[i].style.display = 'none';
-    }
-};
 
+    // questionContainer.style.display = 'none';
+    // results.style.display = 'none';
+    // feedback.style.display = 'none';
 
+//most recently trying to get the display nones to reverse to show something!
 
+//to make them display later, can put display block, inline block etc
+
+var blankQuestions = [];
+
+var questionsArray = [
+    {
+        question:"What is Beyonce's first solo album called?",
+        choices:["B'Day","Dangerously in Love","Beyonce","I Am... Sasha Fierce"],
+        answer:1
+    },
+    {
+        question:"What is Beyonce's favorite number?",
+        choices:["4","7","13","22"],
+        answer:0
+    },
+]
+
+  // Randomly picks word from words array
+function renderBlanks() {
+  // Uses loop to push blanks to blankLetters array
+  blankQuestions = []
+  for (var i = 0; i < questionsArray; i++) {
+    blankQuestions.push("");
+  }
+  // Converts blankLetters array into a string and renders it on the screen
+  questionContainer.textContent = blankQuestions.join(" ")
+}
 
 
 function startQuiz() {
-};
+    questionContainer text.Content = questionsArray[0];
+}
 
 
 
@@ -45,8 +75,7 @@ function startTimer() {
 
 
 
-
+renderBlanks();
 startButton.addEventListener("click", startQuiz);
 startButton.addEventListener("click", startTimer);
-
 //startButton.addEventListener("click", firstQuestion());
