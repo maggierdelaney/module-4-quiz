@@ -10,6 +10,10 @@ header {
     text-align: right;
 }
 
+
+#results {
+    display: none;
+}
 /*will want a view high scores link in the top left corner
 will want questions centered
 will want question paragraph, buttons, and feedback in a column on top of each otehr
