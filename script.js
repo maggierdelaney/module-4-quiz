@@ -10,6 +10,8 @@ var feedback = document.querySelector("#feedback");
 var results = document.querySelector("#results");
 var answer = document.getElementById("correct");
 
+var timeInterval;
+
 //consider making just one question container, then using textContent to change the questions to the second one, the h2 and buttons need separate ids
 
 var blankQuestions = [];
@@ -43,7 +45,7 @@ renderBlanks();
 var reduceTime = 10;
 
 function startTimer() {
-    var timeInterval = setInterval(function () {
+    timeInterval = setInterval(function () {
         if (secondsLeft > 1) {
             timer.textContent = 'Time: ' + secondsLeft + ' seconds remaining';
             secondsLeft--;
@@ -59,8 +61,6 @@ function startTimer() {
         }
     }, 1000);
 };
-
-/* startButton.addEventListener("click", startQuiz); */
 
 startButton.onclick = () => {
     startQuestions();
@@ -80,41 +80,18 @@ function startQuestions() {
         orderedList.appendChild(button)
         button.addEventListener("click", function () {
             currentQuestion++;
-            startQuestions();
+            console.log(currentQuestion);
+            if (currentQuestion < questionsArray.length) {
+                startQuestions();
+            } else {
+                quizComplete();
+                clearInterval(timeInterval);
+            };
         })
     };
     questionContainer.append(questionTitle, orderedList);
 };
 
-//trying to call this after startQuestions is done
-function renderFeedback() {
-    results.innerHTML = "";
-    var allDone = document.createElement("h2");
-    allDone.textContent = "All done!";
-    var initialsForm = document.createElement("form");
-    var element = event.target
-    if (element.matches("button")) {
-        if (element == questionsArray[currentQuestion].answer) {
-            //this isn't 
-            score++;
-           alert("correct!"); 
-        } else {
-            secondsLeft = secondsLeft - reduceTime;
-            alert("wrong!");
-        }
-    }; 
-};
-
-
-//event listener to respond to a click
-// questionsArray.choices.addEventListener("click", questionsArray.choices);
-// //must then check the answer
-// if (questionsArray.answer === 1) {
-//     //correct answer
-// } else if (questionsArray.answer !== 1)
-//for (var i = 0; i < questionsArray; i++)
-//would take me to the next question
-//once this section is done, need another function to call All Done! screen below
 
 var score = 0;
 
@@ -135,8 +112,6 @@ function calculateScore() {
 function quizComplete() {
     document.getElementById('results').style.display= "block";
 };
-
-
 
 
 startButton.addEventListener("click", startTimer);

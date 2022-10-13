@@ -12,7 +12,7 @@ WHEN I answer a question THEN I am presented with another question
 WHEN I answer a question incorrectly, THEN time is subtracted from the clock
   - This part of the code I could not get to work properly, so currently the timer does not decrement the time as intended
 WHEN all questions are answered or the timer reaches 0, THEN the game is over
-  - This part of the code I could not get to work properly, so the "All Done!" screen does not automatically appear once the questions are done, but appears when the timer is out
+  - If the quetions or answers or the timer runs out, you will see the "All done!" screen appear 
 WHEN the game is over, THEN I can save my initials and score
   - I did not get this portion of the code to funciton
 
@@ -30,7 +30,7 @@ At the same time, once "Start Quiz" is clicked, a function revealing the first q
 
 After this, another function was created to populate dynamic feedback to the page after each question, however the function is not working properly in the current state of the project.
 
-Missing installation includes: properly displayed feedback that is correct (currently it all presents as "wrong" even if the correct answer is clicked), the "All done!" screen does not appear at the appropriate time, does not give the score, and the form for initials to be entered is not present.
+Missing installation includes: properly displayed feedback that is correct (currently it all presents as "wrong" even if the correct answer is clicked), does not give the score, and the form for initials to be entered is not present.
 
 ## Usage
 
